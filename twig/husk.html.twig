@@ -10,7 +10,7 @@
 	{% if liste is defined %}
 		<ul class="list-group">
 		{% for person in liste %}
-			<li class="list-group-item"><a href="#" class="UKMSMS">{{ person.mobil }}</a> - {{ person.timestamp|date("d.m.y") }}</li>
+			<li class="list-group-item"><a href="#" class="UKMSMS">{{ person.mobil }}</a> - {{ person.timestamp.date|date("d.m.y") }}</li>
 		{% endfor %}
 	{% endif %}
 {% endblock %}
