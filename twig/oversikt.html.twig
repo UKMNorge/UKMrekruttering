@@ -24,7 +24,7 @@
 				{# SINGELMØNSTRING LOKALT #}
 				<p><span class="lead"><a href="http://husk.ukm.no/f-{{ monstring.getKommuner().first().getFylke().getId() }}/k-{{ monstring.getKommune().getId() }}">Gå til UKM Husk for {{ monstring.getKommune().getNavn() }}</a></p>
 			{% elseif monstring.getType() == 'fylke' %}
-				<p><span class="lead"><a href="http://husk.ukm.no/f-{{ monstring.getFylke().getId() }}">Gå til UKM Husk for {{ monstring.getFylke().getNavn() }}</a></span><br>
+				<p><span class="lead"><a href="http://husk.ukm.no/f-{{ monstring.getFylke().getId() }}/k-0/">Gå til UKM Husk for {{ monstring.getFylke().getNavn() }}</a></span><br>
 			{% else %}
 				<p><span class="lead"><a href="http://husk.ukm.no">Gå til UKM Husk uten å velge tilhørighet</a></span><br>
 			{% endif %}
