@@ -8,8 +8,9 @@
 	<p>Hvis deltakerne har lagt igjen nummeret sitt på <i>din</i> UKM Husk-side, kan du også sende SMS til de med arrangørsystemet selv.</p>
 
 	{% if liste is defined %}
-		{% for personer in liste %}
-			{{ dump(personer) }}	
+		<ul class="list-group">
+		{% for person in liste %}
+			<li class="list-group-item"><a href="#" class="UKMSMS">{{ person.mobil }}</a> - {{ person.timestamp|date("d.m.y") }}</li>
 		{% endfor %}
 	{% endif %}
 {% endblock %}
