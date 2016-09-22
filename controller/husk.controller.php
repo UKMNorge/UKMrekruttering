@@ -13,15 +13,21 @@ if(get_option('site_type') == 'kommune') {
 		$kommuner = $monstring->getKommuner();	
 	}
 	
-	$result = $mobCol->fetchByPlace(22);
+	foreach($kommuner as $kommune) {
+		$result[] = $mobCol->fetchByPlace($monstring->getFylke()->getId(), $kommune);
+	}
+	var_dump($result);
 }
 elseif(get_option('site_type') == 'fylke') {
 	$monstring = new monstring_v2(get_option('pl_id'));
 	$fylke = $monstring->getFylke();
-	$result = $mobCol->fetchByPlace($fylke->getId());
+	$result = $mobCol->fetchByPlace($fylke->getId(), 0);
+	var_dump($result);
 }
 else {
-	$result = $mobCol->fetchAll();	
+	#$result = $mobCol->fetchAll();
+	// Fetch for land
+	$result = $mobCol->fetchByPlace(0, 0);
 }
 
 if($result->success == true) {

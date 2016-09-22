@@ -9,7 +9,7 @@ class MobilnummerCollection {
 		$this->signer = new Signer($api_key, $api_secret);
 
 		if(UKM_HOSTNAME == 'ukm.dev') {
-			$this->baseFetchURL = 'http://husk.ukm.dev/web/app_dev.php/api/phones/';
+			$this->baseFetchURL = 'http://husk.ukm.dev/app_dev.php/api/';
 		}
 	}
 
@@ -28,7 +28,7 @@ class MobilnummerCollection {
 		return $this->handleResult($result);
 	}
 
-	public function fetchByPlace($place) {
+	public function fetchByPlace($fylke, $kommune) {
 		$result = new stdClass();
 
 		$data['time'] = time();
@@ -38,8 +38,8 @@ class MobilnummerCollection {
 
 		$curl = new UKMCURL();
 		$curl->post($data);
-		$result = $curl->process($this->baseFetchURL.'lokal/');
-
+		$result = $curl->process($this->baseFetchURL.'f-'.$fylke.'/k-'.$kommune.'/');
+		var_dump($curl);
 		return $this->handleResult($result);
 	}
 
