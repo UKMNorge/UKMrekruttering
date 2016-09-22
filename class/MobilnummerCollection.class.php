@@ -11,6 +11,9 @@ class MobilnummerCollection {
 		if(UKM_HOSTNAME == 'ukm.dev') {
 			$this->baseFetchURL = 'http://husk.ukm.dev/app_dev.php/api/';
 		}
+		else {
+			$this->baseFetchURL = 'http://husk.ukm.no/api/';
+		}
 	}
 
 	// TODO: Begrens denne til kun UKM Norge
