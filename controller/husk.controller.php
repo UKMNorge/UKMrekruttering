@@ -16,13 +16,13 @@ if(get_option('site_type') == 'kommune') {
 	foreach($kommuner as $kommune) {
 		$result[] = $mobCol->fetchByPlace($monstring->getFylke()->getId(), $kommune);
 	}
-	var_dump($result);
+	#var_dump($result);
 }
 elseif(get_option('site_type') == 'fylke') {
 	$monstring = new monstring_v2(get_option('pl_id'));
 	$fylke = $monstring->getFylke();
 	$result = $mobCol->fetchByPlace($fylke->getId(), 0);
-	var_dump($result);
+	#var_dump($result);
 }
 else {
 	#$result = $mobCol->fetchAll();
@@ -31,7 +31,7 @@ else {
 }
 
 if($result->success == true) {
-	$TWIG['mobilnummer'] = $result;
+	$TWIG['liste'] = $result->data;
 }
 else {
 	$TWIG['message'] = $result;

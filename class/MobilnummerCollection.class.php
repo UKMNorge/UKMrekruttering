@@ -42,7 +42,7 @@ class MobilnummerCollection {
 		$curl = new UKMCURL();
 		$curl->post($data);
 		$result = $curl->process($this->baseFetchURL.'f-'.$fylke.'/k-'.$kommune.'/');
-		var_dump($curl);
+		#var_dump($curl);
 		return $this->handleResult($result);
 	}
 
