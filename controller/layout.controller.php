@@ -4,7 +4,7 @@ $tabs = array();
 $tabs[] = (object) array( 'link' 		=> 'oversikt',
 						  'header' 		=> 'Rekruttering',
 						  'icon'		=> 'info-button-256',
-						  'description'	=> 'Hva er Rekruttering?');
+						  'description'	=> 'Rekrutteringsverktøy');
 
 $tabs[] = (object) array( 'link'		=> 'husk',
 						  'header'		=> 'Mulige deltakere',
