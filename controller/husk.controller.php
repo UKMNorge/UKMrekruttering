@@ -4,10 +4,10 @@ require_once(__DIR__.'/../class/MobilnummerCollection.class.php');
 require_once(__DIR__.'/../class/SecretFinder.class.php');
 require_once('UKM/monstring.class.php');
 
-// Kun gjør dette om vi er admins:
-
-#if(is_super_admin()) {
-if(false) {
+// Kun gjør dette om vi er admins (for debugging etc!)
+// Nummer hentes uansett fra rapportsenteret for lokalkontaktene.
+if(is_super_admin()) {
+#if(false) {
 
 	$api_key = 'ukmno_rekruttering';
 	$secretFinder = new SecretFinder();
