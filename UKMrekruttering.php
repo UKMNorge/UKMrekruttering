@@ -13,7 +13,8 @@ if(is_admin()) {
 }
 
 function UKMrekruttering_menu() {
-	UKM_add_menu_page('resources','Rekruttering', 'Rekruttering', 'superadmin', 'UKMrekruttering', 'UKMrekruttering', 'http://ico.ukm.no/mapmarker-bubble-blue-menu.png',20);
+	#UKM_add_menu_page('resources','Rekruttering', 'Rekruttering', 'superadmin', 'UKMrekruttering', 'UKMrekruttering', 'http://ico.ukm.no/mapmarker-bubble-blue-menu.png',20);
+	UKM_add_submenu_page('UKMmarketing','Rekruttering', 'Rekruttering', 'superadmin', 'UKMrekruttering','UKMrekruttering');#, 'http://ico.ukm.no/contact-menu.png', 11);
 	UKM_add_scripts_and_styles('UKMrekruttering', 'UKMrekruttering_script' );
 }
 
