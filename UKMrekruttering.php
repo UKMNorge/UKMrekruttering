@@ -9,7 +9,7 @@ Author URI: http://www.github.com/AsgeirSH
 */
 
 if(is_admin()) {
-	add_action('UKM_admin_menu', 'UKMrekruttering_menu',100);
+	add_action('UKM_admin_menu', 'UKMrekruttering_menu', 1);
 }
 
 function UKMrekruttering_menu() {
